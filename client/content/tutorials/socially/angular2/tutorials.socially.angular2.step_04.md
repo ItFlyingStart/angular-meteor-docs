@@ -27,7 +27,7 @@ Let's make a new component called `PartiesForm`, and put it inside it's own dire
 Notice that we are exporting the class `PartiesForm` using ES6 module syntax. 
 As a result, you'll be able to import `PartiesForm` in any other component as follows:
 
-    import { PartiesForm } from 'client/imports/parties-form/parties-form';
+    import { PartiesForm } from 'client/imports/parties-form';
 
 By exporting and importing different modules, you create a modular structure of your app in ES6,
 which is similar to the modules in other script languages like Python.
