@@ -60,10 +60,10 @@ Change the code to:
 As you can see, we used a generic type `Mongo.Collection<>` with the class parameter set to `Party` instead of just basic
 `Mongo.Collection` class.
 
-Now let’s fiddle with it. Go to the _client/parties-form/parties-form.ts_ file and change “location” property to, say,
+Now let’s fiddle with it. Go to the _client/imports/parties-form/parties-form.ts_ file and change “location” property to, say,
 “newLocation”. Run the app. You should see in the console a warning saying in a nutshell: there is no “newLocation” property defined on the `Party` type.
 
-Let’s torture it more. Go to the _client/parties-list/parties-list.ts_.
+Let’s torture it more. Go to the _client/imports/parties-list/parties-list.ts_.
 There you’ll see the "parties" property assigned to the `Mongo.Cursor<Object>` type. As you can see, TypeScript considers this construct acceptable even there is no `Party` type mentioned. That’s because Object type is the base class to all types available in JavaScript, so TypeScript doesn’t swear confronting to the OOP principles.
 
 But let’s change it to `Mongo.Cursor<string>`. Run the app and you will see the compiler is unhappy with you again. TypeScript doesn’t know how to convert `Mongo.Cursor<string>` to `Mongo.Cursor<Party>`, so it considers the assignment to be wrong.
